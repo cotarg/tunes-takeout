@@ -34,6 +34,7 @@ gem 'bundler'
 gem 'httparty'
 gem 'rspotify'
 gem 'yelp', require: 'yelp'
+gem 'omniauth-oauth2', '~> 1.3.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -42,6 +43,7 @@ group :development, :test do
   gem 'minitest-vcr'
   gem 'minitest-reporters'
   gem 'webmock'
+  gem 'dotenv-rails'
 
   # gem 'simplecov'
 end
