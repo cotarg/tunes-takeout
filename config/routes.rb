@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :sessions, :only => [:create]
 
   get "/auth/:provider/callback" => "sessions#create"
+  delete '/logout' => 'sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
