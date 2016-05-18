@@ -1,8 +1,6 @@
 class User < ActiveRecord::Base
   # validations
-  validates :provider, presence: true # must be string: spotify
-  validates :uid, presence: true # must be string
-  validates :name, # if present must be string
+  validates :name, :uid, :provider, presence: true
 
   def self.find_or_create_by_omniauth(auth_hash)
     # Find or create a user
