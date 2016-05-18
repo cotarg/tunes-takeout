@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'users#index'
 
+  resources :users
+  resources :sessions, :only => [:create]
+
+  get "/auth/:provider/callback" => "sessions#create"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
