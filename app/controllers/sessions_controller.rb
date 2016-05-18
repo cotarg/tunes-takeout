@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     raise
 
     if user
-      session[:user_id] = user.id
+      session[:user_id] = user.uid
       redirect_to root_path
     else
       # I want to change this to an oops page, or partial?
