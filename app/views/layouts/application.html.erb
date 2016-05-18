@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%#= link_to "Login With Spotify", "/auth/spotify" unless current_user %>
-<%= link_to "Login With Spotify", "/auth/spotify" %>
+
+<%= link_to "Login With Spotify", "/auth/spotify" unless @user %>
+<% if @user %>
+  <%= image_tag "#{@user.image}" %>  <%= "#{@user.name}" %>'s TakeoutTunes
+<%end %>
+
 <%= yield %>
 
 </body>
