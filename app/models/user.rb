@@ -11,13 +11,13 @@ class User < ActiveRecord::Base
     if !user.nil?
       return user
     else
-      self.make_user(auth_hash)
+      make_user(auth_hash)
     end
   end
 
   private
 
-  def self.make_user
+  def make_user
     user = User.new
     user.name = auth_hash["info"]["name"]
     user.uid = auth_hash["uid"]
