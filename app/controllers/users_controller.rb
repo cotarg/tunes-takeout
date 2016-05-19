@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
 
-  def index
-    @user = User.find_by(uid: session[:user_id])
-    render :index
-  end
+
 
   def new
     @user = User.new
