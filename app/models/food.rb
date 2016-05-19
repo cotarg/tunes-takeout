@@ -1,8 +1,7 @@
 require 'httparty'
 
-class Food < ActiveRecord::Base
+class Food
   BASE_FOOD_URI = "https://api.yelp.com/v2/business/"
-  attr_reader :name, :phone, :rating
 
   # Using BFU, concatenating business_id should deliver info about the chosen restaurant
 
