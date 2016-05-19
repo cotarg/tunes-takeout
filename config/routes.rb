@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions, :only => [:create]
+  resources :suggestions
 
   get "/auth/:provider/callback" => "sessions#create"
   delete '/logout' => 'sessions#destroy'
