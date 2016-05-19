@@ -1,8 +1,14 @@
+require 'HTTParty'
+
 class SuggestionsController < ApplicationController
+  BASE_URL = "https://tunes-takeout-api.herokuapp.com/"
+
 
   def index
     @user = User.find_by(uid: session[:user_id])
-    @suggestions = TunesTakeoutWrapper.
+    @suggestions = HTTParty.get(BASE_URL + "/v1/suggestions/top").parsed_response
+    raise
+
     render :index
   end
 
