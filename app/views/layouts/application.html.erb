@@ -8,9 +8,16 @@
 </head>
 <body>
   <header>
+    <%= image_tag("logos/Spotify_Icon_RGB_Green.png", :class => "icon-pic") unless @user %>
     <%= link_to "Login With Spotify", "/auth/spotify" unless @user %>
+    
     <% if @user %>
-      <%= link_to image_tag("#{@user.image}"), "https://open.spotify.com/user/#{@user.uid}" %>  
+      <% if !@user.image.nil? %>
+        <%= link_to image_tag("#{@user.image}", :class => "icon-pic"), "https://open.spotify.com/user/#{@user.uid}" %>
+      <% else %>
+        <%= link_to image_tag("logos/takeout-tunes-logo.png", :class => "icon-pic"), "https://open.spotify.com/user/#{@user.uid}" %>
+      <% end %>
+
       <%=link_to "#{@user.name}'s", "https://open.spotify.com/user/#{@user.uid}" %> TakeoutTunes
       <%= link_to "Logout", logout_path, method: "delete", :class => "btn btn-primary btn-sm" %>
     <%end %>
@@ -19,7 +26,8 @@
   <%= yield %>
 
   <footer>
-    Created using Spotify, Yelp, and a little secret sauce.
+    Created using Spotify, Yelp, and a little secret sauce.<br>
+    Generic icons courtesy of <a href="http://thenounproject.com">The Noun Project</a>: waiter by Jon Trillana.
   </footer>
 
 </body>
