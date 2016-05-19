@@ -1,1 +1,4 @@
-<h1>THIS IS A PAGE!</h1>
+<% @suggestions.each do |suggestion| %>
+  <% @suggestion = suggestion %>
+  <%= render partial: "suggestion", locals: {suggestion: @suggestion} %>
+<%end%>
