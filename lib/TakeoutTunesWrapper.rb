@@ -1,4 +1,6 @@
 require 'HTTParty'
+require 'RSpotify'
+require 'yelp'
 
 module TakeoutTunesWrapper
   BASE_URL = "https://tunes-takeout-api.herokuapp.com/"
