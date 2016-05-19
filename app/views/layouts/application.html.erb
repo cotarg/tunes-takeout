@@ -11,6 +11,7 @@
 <%= link_to "Login With Spotify", "/auth/spotify" unless @user %>
 <% if @user %>
   <%= image_tag "#{@user.image}" %>  <%= "#{@user.name}" %>'s TakeoutTunes
+  <%= link_to "Logout", logout_path, method: "delete", :class => "btn btn-primary btn-sm" %>
 <%end %>
 
 <%= yield %>
