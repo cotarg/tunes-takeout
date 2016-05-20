@@ -1,6 +1,7 @@
-<p><b><% working_suggestion = construct_single_suggestion_complete_object(@suggestion) %></b></p>
+<%= working_suggestion = construct_single_suggestion_complete_object(@suggestion) %>
 
-
+<h1> A Suggestion! </h1>
+<%= image_tag working_suggestion[:yelp].business.image_url %>
 <p>Unique Pair ID: <%= working_suggestion[:pair]["id"] %></p>
 <p>Noms: <%= link_to "#{working_suggestion[:yelp].business.name}",
                      "#{ working_suggestion[:yelp].business.url}" %></p>
