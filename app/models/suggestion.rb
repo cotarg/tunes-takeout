@@ -18,7 +18,7 @@ class Suggestion < ActiveRecord::Base
     @music_type = TakeoutTunesWrapper.music_type(pair_id)
   end
 
-  def yelp_hash(pair_id)
+  def self.yelp_hash(pair_id)
     business_hash = client.business(TakeoutTunesWrapper.food_id(pair_id))
   end
 

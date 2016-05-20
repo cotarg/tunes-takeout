@@ -16,11 +16,11 @@ class SuggestionsController < ApplicationController
     @suggestions = TakeoutTunesWrapper.top(20)["suggestions"]
 
     render :index
+    raise
+    
   end
-  
-  def yelp_hash(pair_id)
-    business_hash = client.business(TakeoutTunesWrapper.food_id(pair_id))
-  end
+
+
 
 
   def show
@@ -30,5 +30,7 @@ class SuggestionsController < ApplicationController
   end
 
   private
+
+
 
 end
