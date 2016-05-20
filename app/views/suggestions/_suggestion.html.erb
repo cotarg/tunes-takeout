@@ -1,8 +1,8 @@
-<p><em><%= working_suggestion = TakeoutTunesWrapper.pair(@suggestion)["suggestion"] %></em></p>
+<p><b><%= working_suggestion = construct_single_suggestion_complete_object(@suggestion) %></b></p>
 
 
-<p>Unique Pair ID: <%= working_suggestion["id"] %></p>
-<p>Noms: <%= working_suggestion["food_id"] %></p>
+<p>Unique Pair ID: <%= working_suggestion[:pair]["id"] %></p>
+<p>Noms: <%= link_to working_suggestion.name, "#{working_suggestion[:yelp].url}" %></p>
 <p>Songs: <%= working_suggestion["music_id"] %></p>
 <p>Spotify Type: <%= working_suggestion["music_type"] %></p>
 

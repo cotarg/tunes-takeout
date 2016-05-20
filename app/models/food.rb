@@ -6,20 +6,20 @@ class Food
 
   # Using BFU, concatenating business_id should deliver info about the chosen restaurant
 
-  def initialize(data)
-    @business_id = data["business_id"]
-    @name = data["name"]
-    @url = data["url"]
-    @image_url = data["image_url"]
-    @phone = data["phone"]
-    @rating = data["rating"]
-  end
+  # def initialize(data)
+  #   @business_id = data["business_id"]
+  #   @name = data["name"]
+  #   @url = data["url"]
+  #   @image_url = data["image_url"]
+  #   @phone = data["phone"]
+  #   @rating = data["rating"]
+  # end
 
-  def self.find(business_id)
-    yelp_hash = HTTParty.get(BASE_FOOD_URI + "#{business_id}").parsed_response
+  # def self.find(business_id)
+  #   yelp_hash = HTTParty.get(BASE_FOOD_URI + "#{business_id}").parsed_response
 
-    self.new(yelp_hash)
-  end
+  #   self.new(yelp_hash)
+  # end
 
   # business_id string  Yelp-specific ID, which can be used to make calls to the Yelp Business API to retrieve complete details
   # name  string  Name of the business
