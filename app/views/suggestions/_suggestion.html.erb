@@ -1,1 +1,8 @@
-<%= working_suggestion = TakeoutTunesWrapper.pair(@suggestion) %>
+<p><em><%= working_suggestion = TakeoutTunesWrapper.pair(@suggestion)["suggestion"] %></em></p>
+
+<p>Unique Pair ID: <%= working_suggestion["id"] %></p>
+<p>Noms: <%= Suggestion.yelp_hash(working_suggestion["food_id"]) %></p>
+<p>Songs: <%= working_suggestion["music_id"] %></p>
+<p>Spotify Type: <%= working_suggestion["music_type"] %></p>
+
+<%# if current_user, OPTION TO FAVE! %>
