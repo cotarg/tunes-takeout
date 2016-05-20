@@ -1,5 +1,6 @@
-
-
+<div class="container">
+  <div class="row">
+    
 <%#= if logged in user %>
   <%#= FORM FOR SEARCH HERE %>
 
@@ -10,7 +11,12 @@
     <%#= end %>
   <%#= else %>
     <% @suggestions.each do |suggestion| %>
+    <div class="col-md-4 bordered">
       <% @suggestion = suggestion %>
       <%= render partial: 'suggestion', locals: {suggestion: @suggestion} %>
+    </div>
     <%end%>
   <%#= end %>
+    
+  </div>
+</div>
