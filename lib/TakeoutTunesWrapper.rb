@@ -17,16 +17,16 @@ module TakeoutTunesWrapper
       @pair_hash = HTTParty.get(BASE_URL + "v1/suggestions/#{pair_id}").parsed_response
     end
 
-    def self.music_id(pair_id)
-      @music_id = self.pair(pair_id)["music_id"]
-    end
+    # def self.music_id(pair_id)
+    #   @music_id = self.pair(pair_id)["music_id"]
+    # end
 
-    def self.music_type(pair_id)
-      self.pair(pair_id)["music_type"]
-    end
+    # def self.music_type(pair_id)
+    #   self.pair(pair_id)["music_type"]
+    # end
 
-    def self.food_id(pair_id)
-      self.pair(pair_id)["food_id"]
-    end
+    # def self.food_id(pair_id)
+    #     self.pair(pair_id)["food_id"]
+    # end
 
 end
