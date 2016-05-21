@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'suggestions#index'
+  post "/" => "suggestions#search", as: "search_suggestions"
 
   resources :users
   resources :sessions, :only => [:create]
   resources :suggestions
 
   get "/auth/:provider/callback" => "sessions#create"
+
   delete '/logout' => 'sessions#destroy'
 
 
