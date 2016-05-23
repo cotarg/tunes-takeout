@@ -2,27 +2,14 @@
 
 
 <div class="container">
-  <% if @user %>
-    <%= render partial: 'searchform' %>
-  <% end %>
 
   <div class="row">
-    
-  <% if @search_results != 0 %>
-    <%= @search_results.each do |suggestion| %>
-      <% @suggestion = suggestion %>
-      <div class="col-md-6 bordered">
-      <%= render partial: "suggestion", locals: {suggestion: @suggestion} %>
-      </div>
-    <% end %>
-  <% else %>
     <% @suggestions.each do |suggestion| %>
       <div class="col-md-6 bordered">
       <% @suggestion = suggestion %>
       <%= render partial: 'suggestion', locals: {suggestion: @suggestion} %>
       </div>
     <% end %>
-  <% end %>
     
   </div>
 </div>

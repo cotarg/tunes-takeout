@@ -1,5 +1,5 @@
-<%= form_for :search_results, url: search_suggestions_path do |f| %>
-  <%= f.label :search %>
-  <%= f.text_field :search %>
+<%= form_for @search_results, url: search_suggestions_path do |f| %>
+  <%= f.label :keyword %>
+  <%= f.text_field :keyword %>
   <%= f.submit %>
 <% end %>
