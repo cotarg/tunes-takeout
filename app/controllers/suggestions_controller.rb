@@ -10,6 +10,8 @@ class SuggestionsController < ApplicationController
   def index
     @user = User.find_by(uid: session[:user_id])
     @suggestions = TakeoutTunesWrapper.top(21)["suggestions"]
+    @request = @_request
+    # raise
     # @search_results ||= 0
 
     render :index
